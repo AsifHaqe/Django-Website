@@ -1,0 +1,14 @@
+{% extends "blogapp/base.html" %}
+{% block content %}
+<h1>This is Loginpage</h1>
+
+<div class="container w-50 p-4 shadow-lg rounded-4">
+    <form method="post">
+        {% csrf_token %}
+        {% for fm in forms %}
+        {{fm.label_tag}} {{fm}}
+        {% endfor %}
+        <input type="Submit" value="Sign up" class="btn btn-success mt-2">
+    </form>
+</div>
+{% endblock %}
